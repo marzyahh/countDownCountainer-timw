@@ -1,19 +1,31 @@
-const newYear = '21 mar 2021'
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minsEl = document.getElementById('mins');
+const secondEl = document.getElementById('seconds');
+
+const newYear = '21 mar 2021';
 
 function countdown() {
-    const newYearsDate = new Date(newYear)
-    const currentDate = new Date()
-    var totalSeconds = Math.floor(newYearsDate - currentDate) / 1000
-    var minutes = Math.floor(totalSeconds / 60)
-    var hours = Math.floor(minutes / 60)
-    const days = Math.floor(hours / 24)
+    const newYearsDate = new Date(newYear);
+    const currentDate = new Date();
+    const totalSeconds = Math.floor(newYearsDate - currentDate) / 1000;
+    const seconds = Math.floor(totalSeconds) % 60;
+    const mins = Math.floor(totalSeconds / 3600) % 60;
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const days = Math.floor(totalSeconds / 3600 / 24);
 
-    hours = hours - (days * 24);
-    minutes = minutes - (days * 24 * 60) - (hours * 60);
-    totalSeconds = totalSeconds - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
+    secondEl.innerHTML = formatTime(seconds);
+    minsEl.innerHTML = formatTime(mins);
+    hoursEl.innerHTML = formatTime(hours);
+    daysEl.innerHTML = days;
 
-    console.log(days, hours, minutes, totalSeconds)
+
 }
+
+function formatTime(time) {
+    return time < 10 ? (`0${time}`) : time;
+}
+
 countdown();
 
-// setInterval(countdown, 1000)
+setInterval(countdown, 1000)

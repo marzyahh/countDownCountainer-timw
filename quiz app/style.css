@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+* {
+    box-sizing: border-box;
+    /* oh oh it's very good, without this line code if we have diff boxes actually they don't have equal size
+    even you defined same width and height for them but with this line we sid please set equal 
+    width, height and padding for any box that we had */
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #bcc3cf;
+    min-height: 100vh;
+}
+
+.quiz-container {
+    background-color: #fff;
+    width: 400px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(100, 100, 100, 0.2);
+}
+
+.quiz-header {
+    padding: 4rem;
+}
+
+h2 {
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+ul li label {
+    cursor: pointer;
+}
+
+button {
+    background-color: #8e44ad;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    padding: 1.3rem;
+    width: 100%;
+    display: block;
+}
+
+button:hover {
+    background-color: #732d91;
+}
